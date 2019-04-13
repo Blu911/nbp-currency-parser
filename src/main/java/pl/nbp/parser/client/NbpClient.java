@@ -25,7 +25,7 @@ public class NbpClient {
     private static List<String> getAvailableFilesForYear(int startDateYear) throws IOException {
         int currentYear = LocalDate.now().getYear();
         String filename = startDateYear == currentYear ? "dir.txt" : String.format("dir%d.txt", startDateYear);
-        return Arrays.asList(HttpClient.getStringFromUri(String.format("%s%s", NBP_URI, filename)).split("\r\n"));
+        return Arrays.asList(HttpClient.getStringFromUri(String.format("%s/%s", NBP_URI, filename)).split("\r\n"));
     }
 
     public static List<String> getFilenamesBetweenDates (LocalDate startDate, LocalDate endDate) throws IOException {
