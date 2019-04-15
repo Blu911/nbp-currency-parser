@@ -17,10 +17,10 @@ public class ExchangeRateCalculator {
     }
 
     public static Double calculateStandardDeviationOfSellRate(List<ExchangeRate> exchangeRates) {
-        Double avg = calculateAverageRate(exchangeRates, ExchangeRate::getCurrencySellRate);
+        Double averageSellRate = calculateAverageRate(exchangeRates, ExchangeRate::getCurrencySellRate);
         return Math.sqrt(
                 exchangeRates.stream()
-                .mapToDouble(e -> avg - e.getCurrencySellRate())
+                .mapToDouble(e -> e.getCurrencySellRate() - averageSellRate)
                 .map(e -> Math.pow(e, 2))
                 .average()
                 .getAsDouble()

@@ -22,14 +22,14 @@ public class ExchangeRateFilterTest {
                 new ExchangeRate("EUR", 4.313f, 4.445f)
         );
 
-        List<ExchangeRate> returnedExchangeRates = Arrays.asList(
+        List<ExchangeRate> expectedExchangeRates = Arrays.asList(
                 new ExchangeRate("EUR", 4.135f, 4.199f),
                 new ExchangeRate("EUR", 4.313f, 4.445f)
         );
 
         List<ExchangeRate> filteredExchangeRates = ExchangeRateFilter.filterByCurrencyCode(givenExchangeRates, "EUR");
 
-        assertThat(filteredExchangeRates, Matchers.is(returnedExchangeRates));
+        assertThat(filteredExchangeRates, Matchers.is(expectedExchangeRates));
     }
 
     @Test

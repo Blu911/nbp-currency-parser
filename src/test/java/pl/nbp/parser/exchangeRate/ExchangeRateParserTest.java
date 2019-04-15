@@ -13,7 +13,7 @@ public class ExchangeRateParserTest {
 
     @Test
     public void shouldParseExchangeRates() throws JAXBException {
-        final String givenXmlToParse =
+        final String givenXmlStringToParse =
                 "<tabela_kursow typ=\"C\">\n" +
                         "<numer_tabeli>73/C/NBP/2007</numer_tabeli>\n" +
                         "<data_notowania>2007-04-12</data_notowania>\n" +
@@ -34,14 +34,14 @@ public class ExchangeRateParserTest {
                         "</pozycja>\n" +
                         "</tabela_kursow>";
 
-        List<ExchangeRate> parsedXml = ExchangeRateParser.parseToList(givenXmlToParse);
+        List<ExchangeRate> parsedExchangeRate = ExchangeRateParser.parseToList(givenXmlStringToParse);
 
-        List<ExchangeRate> returnedExchangeRates = Arrays.asList(
+        List<ExchangeRate> expectedExchangeRates = Arrays.asList(
                 new ExchangeRate("USD", 2.8210f, 2.8780f),
                 new ExchangeRate("AUD", 2.3292f, 2.3762f)
         );
 
-        assertThat(parsedXml, Matchers.is(returnedExchangeRates));
+        assertThat(parsedExchangeRate, Matchers.is(expectedExchangeRates));
 
     }
 }

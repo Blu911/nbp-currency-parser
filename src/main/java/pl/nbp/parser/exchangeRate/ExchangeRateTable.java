@@ -1,6 +1,7 @@
 package pl.nbp.parser.exchangeRate;
 
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -8,6 +9,13 @@ import java.util.List;
 
 @XmlRootElement(name = "tabela_kursow")
 public class ExchangeRateTable {
+    @Setter
+    private List<ExchangeRateItem> items;
+
+    @XmlElement(name = "pozycja")
+    public List<ExchangeRateItem> getItems() {
+        return items;
+    }
 
     @Setter
     @XmlRootElement(name = "pozycja")
@@ -30,12 +38,5 @@ public class ExchangeRateTable {
         public String getCurrencySellRate() {
             return currencySellRate;
         }
-    }
-    @Setter
-    private List<ExchangeRateItem> items;
-
-    @XmlElement(name = "pozycja")
-    public List<ExchangeRateItem> getItems() {
-        return items;
     }
 }

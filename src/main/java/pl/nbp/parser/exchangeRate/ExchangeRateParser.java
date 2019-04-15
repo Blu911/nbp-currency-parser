@@ -10,10 +10,12 @@ import java.util.stream.Collectors;
 public class ExchangeRateParser {
 
     public static List<ExchangeRate> parseToList(String content) throws JAXBException {
-        Unmarshaller unmarshaller = JAXBContext.newInstance(ExchangeRateTable.class).createUnmarshaller();
+        JAXBContext jaxbContext = JAXBContext.newInstance(ExchangeRateTable.class);
+        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
         StringReader stringReader = new StringReader(content);
 
-        ExchangeRateTable exchangeRateTable = (ExchangeRateTable) unmarshaller.unmarshal(stringReader);
+        Object unmarshal = unmarshaller.unmarshal(stringReader);
+        ExchangeRateTable exchangeRateTable = (ExchangeRateTable) unmarshal;
 
         return exchangeRateTable.getItems().stream().map(exchangeRateItem -> {
             ExchangeRate exchangeRate = new ExchangeRate();
