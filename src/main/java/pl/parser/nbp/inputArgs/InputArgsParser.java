@@ -1,4 +1,4 @@
-package pl.nbp.parser.inputArgs;
+package pl.parser.nbp.inputArgs;
 
 import java.time.LocalDate;
 

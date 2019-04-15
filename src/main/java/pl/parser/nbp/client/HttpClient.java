@@ -1,4 +1,4 @@
-package pl.nbp.parser.client;
+package pl.parser.nbp.client;
 
 import com.jcabi.http.request.JdkRequest;
 

@@ -1,4 +1,4 @@
-package pl.nbp.parser.exchangeRate;
+package pl.parser.nbp.exchangeRate;
 
 import java.util.List;
 import java.util.function.ToDoubleFunction;

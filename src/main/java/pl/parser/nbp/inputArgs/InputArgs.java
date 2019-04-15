@@ -1,14 +1,16 @@
-package pl.nbp.parser.exchangeRate;
+package pl.parser.nbp.inputArgs;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ExchangeRate {
+public class InputArgs {
     private String currencyCode;
-    private Float currencyBuyRate;
-    private Float currencySellRate;
+    private LocalDate startDate;
+    private LocalDate endDate;
 }

@@ -1,4 +1,4 @@
-package pl.nbp.parser.exchangeRate;
+package pl.parser.nbp.exchangeRate;
 
 import org.hamcrest.Matchers;
 import org.junit.Test;

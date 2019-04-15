@@ -1,4 +1,4 @@
-package pl.nbp.parser.exchangeRate;
+package pl.parser.nbp.exchangeRate;
 
 import lombok.Setter;
 import lombok.ToString;

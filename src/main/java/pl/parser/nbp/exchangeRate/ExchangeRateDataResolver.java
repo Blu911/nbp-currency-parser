@@ -1,11 +1,11 @@
-package pl.nbp.parser.exchangeRate;
+package pl.parser.nbp.exchangeRate;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.nbp.parser.client.NbpClient;
-import pl.nbp.parser.inputArgs.InputArgs;
+import pl.parser.nbp.client.NbpClient;
+import pl.parser.nbp.inputArgs.InputArgs;
 
 import javax.xml.bind.JAXBException;
 import java.io.IOException;

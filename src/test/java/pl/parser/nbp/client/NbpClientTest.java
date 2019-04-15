@@ -1,4 +1,4 @@
-package pl.nbp.parser.client;
+package pl.parser.nbp.client;
 
 import org.hamcrest.Matchers;
 import org.junit.Test;

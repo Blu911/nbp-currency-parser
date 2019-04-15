@@ -1,8 +1,8 @@
-package pl.nbp.parser.exchangeRate;
+package pl.parser.nbp.exchangeRate;
 
 import org.hamcrest.Matchers;
 import org.junit.Test;
-import pl.nbp.parser.inputArgs.InputArgs;
+import pl.parser.nbp.inputArgs.InputArgs;
 
 import java.io.IOException;
 import java.time.LocalDate;

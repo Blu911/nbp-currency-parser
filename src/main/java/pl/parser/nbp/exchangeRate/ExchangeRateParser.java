@@ -1,4 +1,4 @@
-package pl.nbp.parser.exchangeRate;
+package pl.parser.nbp.exchangeRate;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
