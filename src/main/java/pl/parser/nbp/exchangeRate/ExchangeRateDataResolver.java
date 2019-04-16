@@ -22,7 +22,7 @@ public class ExchangeRateDataResolver {
         private final Double currencyStandardDeviationSellRate;
     }
 
-    public static ExchangeRateData resolve (InputArgs inputArgs) throws IOException {
+    public static ExchangeRateData resolve(InputArgs inputArgs) throws IOException {
         List<String> filenamesBetweenDates = NbpClient.getFilenamesBetweenDates(
                 inputArgs.getStartDate(),
                 inputArgs.getEndDate()

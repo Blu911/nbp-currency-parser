@@ -7,9 +7,9 @@ import java.io.StringReader;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ExchangeRateParser {
+class ExchangeRateParser {
 
-    public static List<ExchangeRate> parseToList(String content) throws JAXBException {
+    static List<ExchangeRate> parseToList(String content) throws JAXBException {
         JAXBContext jaxbContext = JAXBContext.newInstance(ExchangeRateTable.class);
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
         StringReader stringReader = new StringReader(content);

@@ -9,14 +9,11 @@ import pl.parser.nbp.inputArgs.InputArgsParser;
 import java.io.IOException;
 
 public class MainClass {
-    public static final Logger LOGGER = LoggerFactory.getLogger(ExchangeRateDataResolver.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ExchangeRateDataResolver.class);
 
     public static void main(String[] args) {
         InputArgs inputArgs = InputArgsParser.parseInputArgs(args[0], args[1], args[2]);
-        System.out.format("Data entered: %s %s %s\n",
-                inputArgs.getCurrencyCode(),
-                inputArgs.getStartDate(),
-                inputArgs.getEndDate());
+
         try {
             ExchangeRateDataResolver.ExchangeRateData exchangeRateData = ExchangeRateDataResolver.resolve(inputArgs);
             System.out.format("%.4f\n", exchangeRateData.getCurrencyAverageBuyRate());
