@@ -31,7 +31,8 @@ public class NbpClient {
     public static List<String> getFilenamesBetweenDates(LocalDate startDate, LocalDate endDate) throws IOException {
         List<String> availableFiles = getAvailableFiles(startDate, endDate);
         return availableFiles.stream()
-                .filter(f -> f.startsWith("c"))
+                .filter(f -> f.contains("c"))
+                .map(f -> f.length() > 11 ? f.substring(1) : f)
                 .filter(f -> {
                     String fileDateString = f.substring(5, 11);
                     LocalDate fileDate = LocalDate.parse(fileDateString, DateTimeFormatter.ofPattern("yyMMdd"));
